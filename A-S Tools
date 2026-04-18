@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+<meta name="description" content="A-S Tools Updates — Premium AI Tool Subscriptions at Best Prices"/>
+<title>A-S Tools Updates — Premium AI Tools</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<style>
+/* ══════════════════════════════════════════════
+   VARIABLES
+══════════════════════════════════════════════ */
+:root {
+  --ink:       #0b0e14;
+  --ink2:      #111520;
+  --ink3:      #161c2a;
+  --panel:     #0f1422;
+  --card:      #121826;
+  --line:      rgba(255,255,255,0.07);
+  --line2:     rgba(255,255,255,0.12);
+  --gold:      #e8b84b;
+  --gold2:     #f5d06e;
+  --gold3:     rgba(232,184,75,0.15);
+  --teal:      #34d399;
+  --sky:       #60a5fa;
+  --red:       #f87171;
+  --text:      #e8edf5;
+  --text2:     #8a95a8;
+  --text3:     #4f5a6b;
+  --white:     #ffffff;
+  --r:         12px;
+  --r2:        20px;
+  --r3:        32px;
+  --ease:      cubic-bezier(0.4,0,0.2,1);
+  --t:         0.25s;
+}
+
+/* ══════════════════════════════════════════════
+   RESET
+══════════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Plus Jakarta Sans',sans-serif;
+  background:var(--ink);color:var(--text);
+  overflow-x:hidden;min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.6;
+}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+input,textarea{font-family:inherit}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--ink2)}
+::-webkit-scrollbar-thumb{background:rgba(232,184,75,0.3);border-radius:99px}
+
+/* ══════════════════════════════════════════════
+   BACKGROUND ORBS
+══════════════════════════════════════════════ */
+.bg-orb{
+  position:fixed;border-radius:50%;
+  pointer-events:none;z-index:0;
+  filter:blur(120px);opacity:0.06;
+}
+.orb-a{width:700px;height:700px;background:radial-gradient(circle,#e8b84b,transparent);top:-200px;right:-200px;}
+.orb-b{width:500px;height:500px;background:radial-gradient(circle,#34d399,transparent);bottom:10%;left:-150px;}
+
+/* ══════════════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════════════ */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:900;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(16px,4vw,48px);
+  background:rgba(11,14,20,0.8);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);
+  transition:background var(--t) var(--ease);
+}
+.navbar.scrolled{background:rgba(11,14,20,0.97)}
+
+.nav-brand{display:flex;align-items:center;gap:11px}
+.nav-brand-badge{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,var(--gold),#c8942c);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;flex-shrink:0;
+  box-shadow:0 4px 16px rgba(232,184,75,0.3);
+}
+.nav-brand-info{line-height:1.2}
+.nav-brand-name{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;
+  color:var(--white);letter-spacing:-0.2px;
+}
+.nav-brand-name em{color:var(--gold);font-style:normal}
+.nav-brand-tag{font-size:0.62rem;color:var(--text3);letter-spacing:1.2px;text-transform:uppercase;margin-top:1px}
+
+/* Cart trigger */
+.cart-trigger{
+  display:flex;align-items:center;gap:8px;
+  padding:8px 18px;
+  background:rgba(232,184,75,0.08);
+  border:1px solid rgba(232,184,75,0.25);
+  border-radius:var(--r);
+  color:var(--text);font-size:0.85rem;font-weight:500;
+  transition:all var(--t) var(--ease);
+  position:relative;
+}
+.cart-trigger:hover{
+  background:rgba(232,184,75,0.15);
+  border-color:rgba(232,184,75,0.5);
+  color:var(--gold);
+  transform:translateY(-1px);
+}
+.cart-trigger svg{flex-shrink:0;transition:transform var(--t)}
+.cart-trigger:hover svg{transform:scale(1.1)}
+.cart-num{
+  background:var(--gold);color:var(--ink);
+  font-size:0.62rem;font-weight:700;
+  min-width:18px;height:18px;padding:0 4px;
+  border-radius:99px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ══════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════ */
+.hero{
+  position:relative;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden;
+  padding:64px 20px 0;
+}
+.hero-photo{
+  position:absolute;inset:0;
+  background:url('https://i.ibb.co/prwY1NjF/ai-tools-banner-1.png') center/cover no-repeat;
+  filter:brightness(0.22) saturate(1.3);
+  transform:scale(1.05);
+  animation:slowZoom 22s ease-in-out infinite alternate;
+  transform-origin:center;
+}
+@keyframes slowZoom{from{transform:scale(1.05)}to{transform:scale(1.12)}}
+
+.hero-veil{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 45%, rgba(232,184,75,0.1) 0%,transparent 65%),
+    linear-gradient(to bottom, rgba(11,14,20,0.3) 0%, rgba(11,14,20,0.92) 90%, var(--ink) 100%);
+}
+
+/* Subtle grain */
+.hero-grain{
+  position:absolute;inset:0;pointer-events:none;opacity:0.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  background-size:200px 200px;
+}
+
+.hero-inner{position:relative;z-index:2;max-width:820px;padding:0 16px}
+
+.hero-chip{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(232,184,75,0.1);
+  border:1px solid rgba(232,184,75,0.3);
+  border-radius:99px;
+  padding:6px 18px;
+  font-size:0.7rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:28px;
+  animation:rise 0.8s ease both;
+}
+.hero-chip-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 10px var(--gold);
+  animation:blink 2s ease infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3;transform:scale(1.5)}}
+
+.hero-h1{
+  font-family:'Fraunces',serif;
+  font-size:clamp(2.8rem,8vw,5.8rem);
+  font-weight:400;line-height:1.05;
+  letter-spacing:-1.5px;
+  margin-bottom:20px;
+  animation:rise 0.85s 0.1s ease both;
+}
+.hero-h1-top{display:block;color:var(--white)}
+.hero-h1-bot{
+  display:block;
+  background:linear-gradient(110deg,var(--gold2) 20%,#fff 60%,var(--gold) 90%);
+  background-size:200%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  animation:shimmerText 4s ease infinite alternate;
+}
+@keyframes shimmerText{from{background-position:0%}to{background-position:100%}}
+
+.hero-sub{
+  font-size:clamp(0.95rem,2.5vw,1.1rem);font-weight:400;
+  color:rgba(232,237,245,0.65);
+  max-width:500px;margin:0 auto 40px;line-height:1.8;
+  animation:rise 0.9s 0.2s ease both;
+}
+
+.hero-btns{
+  display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;
+  animation:rise 1s 0.3s ease both;
+}
+
+/* Gold CTA */
+.btn-gold{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 32px;
+  background:linear-gradient(135deg,var(--gold),#c8942c);
+  border-radius:var(--r);color:var(--ink);
+  font-size:0.9rem;font-weight:600;letter-spacing:0.2px;
+  box-shadow:0 4px 28px rgba(232,184,75,0.35);
+  transition:all var(--t) var(--ease);
+  position:relative;overflow:hidden;
+}
+.btn-gold::after{
+  content:'';position:absolute;inset:0;
+  background:rgba(255,255,255,0.2);
+  opacity:0;transition:opacity var(--t);
+}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(232,184,75,0.5)}
+.btn-gold:hover::after{opacity:1}
+.btn-gold:active{transform:scale(0.98)}
+.btn-gold-icon{transition:transform var(--t)}
+.btn-gold:hover .btn-gold-icon{transform:translateX(4px)}
+
+/* Ghost CTA */
+.btn-ghost{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:13px 26px;
+  background:transparent;
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:var(--r);color:rgba(232,237,245,0.8);
+  font-size:0.88rem;font-weight:500;
+  transition:all var(--t) var(--ease);
+}
+.btn-ghost:hover{
+  border-color:rgba(232,184,75,0.45);
+  color:var(--gold);background:rgba(232,184,75,0.06);
+  transform:translateY(-2px);
+}
+
+/* Hero metrics */
+.hero-metrics{
+  position:absolute;bottom:44px;left:50%;transform:translateX(-50%);
+  display:flex;align-items:center;gap:40px;
+  z-index:2;flex-wrap:wrap;justify-content:center;
+  animation:rise 1s 0.5s ease both;
+}
+.metric{text-align:center}
+.metric-n{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.8rem;
+  color:var(--white);letter-spacing:-1px;line-height:1;
+}
+.metric-n small{color:var(--gold);font-size:1.2rem}
+.metric-l{font-size:0.68rem;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;margin-top:4px}
+.metrics-sep{width:1px;height:32px;background:var(--line2)}
+
+@keyframes rise{
+  from{opacity:0;transform:translateY(26px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ══════════════════════════════════════════════
+   DIVIDER
+══════════════════════════════════════════════ */
+.section-divider{
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--line2),transparent);
+  margin:0;
+}
+
+/* ══════════════════════════════════════════════
+   SECTION WRAPPER
+══════════════════════════════════════════════ */
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.section-pad{padding:88px 0}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:0.68rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:14px;
+}
+.eyebrow-line{
+  width:24px;height:2px;
+  background:linear-gradient(to right,var(--gold),transparent);
+  border-radius:99px;
+}
+.sec-title{
+  font-family:'Fraunces',serif;
+  font-size:clamp(1.9rem,4vw,3rem);
+  font-weight:400;letter-spacing:-1px;line-height:1.12;
+  color:var(--white);margin-bottom:10px;
+}
+.sec-sub{font-size:0.95rem;color:var(--text2);line-height:1.75}
+
+/* ══════════════════════════════════════════════
+   PRODUCTS
+══════════════════════════════════════════════ */
+.products-band{
+  background:linear-gradient(180deg,var(--ink) 0%,var(--ink2) 50%,var(--ink) 100%);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:88px 0;
+  overflow:hidden;
+}
+.products-head{text-align:center;margin-bottom:56px}
+
+/* Carousel */
+.c-outer{position:relative}
+.c-fade{
+  position:absolute;top:0;bottom:0;width:100px;
+  pointer-events:none;z-index:2;
+}
+.c-fade-l{left:0;background:linear-gradient(to right,var(--ink2),transparent)}
+.c-fade-r{right:0;background:linear-gradient(to left,var(--ink2),transparent)}
+
+.c-track{
+  display:flex;gap:20px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  padding:12px clamp(16px,4vw,48px) 28px;
+  -ms-overflow-style:none;scrollbar-width:none;
+  cursor:grab;
+  -webkit-overflow-scrolling:touch;
+}
+.c-track:active{cursor:grabbing}
+.c-track::-webkit-scrollbar{display:none}
+
+/* Product Card */
+.p-card{
+  flex:0 0 268px;scroll-snap-align:start;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--r2);overflow:hidden;
+  position:relative;
+  transition:transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+  will-change:transform;
+}
+.p-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 90% 60% at 50% 0%,rgba(232,184,75,0.06),transparent);
+  opacity:0;transition:opacity 0.3s;pointer-events:none;z-index:0;
+}
+.p-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(232,184,75,0.28);
+  box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(232,184,75,0.08);
+}
+.p-card:hover::before{opacity:1}
+
+/* Card image area */
+.p-img{
+  height:188px;
+  background:linear-gradient(155deg,#0c1524,#111e30);
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;position:relative;z-index:1;
+  padding:24px;
+}
+.p-img::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:50px;
+  background:linear-gradient(to top,var(--card),transparent);
+}
+.p-img img{
+  max-width:100%;max-height:130px;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 20px rgba(0,0,0,0.5));
+  transition:transform 0.4s var(--ease),filter 0.3s;
+}
+.p-card:hover .p-img img{
+  transform:scale(1.09) translateY(-4px);
+  filter:drop-shadow(0 14px 28px rgba(232,184,75,0.18));
+}
+
+/* Card body */
+.p-body{padding:18px 18px 20px;position:relative;z-index:1}
+.p-name{
+  font-family:'Fraunces',serif;font-weight:400;font-size:1.05rem;
+  color:var(--white);letter-spacing:-0.2px;margin-bottom:6px;
+  line-height:1.3;
+}
+.p-desc{
+  font-size:0.78rem;color:var(--text2);line-height:1.65;
+  margin-bottom:16px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.p-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.p-price{
+  font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;
+  color:var(--gold);letter-spacing:-0.3px;
+}
+.p-tag{
+  font-size:0.62rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;
+  padding:3px 9px;border-radius:99px;
+  background:rgba(52,211,153,0.1);color:var(--teal);
+  border:1px solid rgba(52,211,153,0.2);
+}
+.p-actions{display:flex;gap:8px}
+
+/* Add to cart button */
+.btn-cart{
+  flex:1;padding:10px 0;
+  background:linear-gradient(135deg,rgba(232,184,75,0.15),rgba(200,148,44,0.1));
+  border:1px solid rgba(232,184,75,0.25);
+  border-radius:var(--r);
+  color:var(--gold);font-size:0.82rem;font-weight:600;
+  transition:all var(--t) var(--ease);
+  position:relative;overflow:hidden;
+}
+.btn-cart::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--gold),#c8942c);
+  opacity:0;transition:opacity var(--t);
+}
+.btn-cart span{position:relative;z-index:1}
+.btn-cart:hover{color:var(--ink);border-color:var(--gold);transform:translateY(-2px);box-shadow:0 6px 20px rgba(232,184,75,0.3)}
+.btn-cart:hover::before{opacity:1}
+.btn-cart:active{transform:scale(0.98)}
+.btn-cart.done{background:linear-gradient(135deg,var(--teal),#059669);border-color:var(--teal);color:#fff}
+.btn-cart.done::before{opacity:0}
+
+/* WA product button */
+.btn-wa-sm{
+  width:40px;height:40px;border-radius:var(--r);flex-shrink:0;
+  background:rgba(37,211,102,0.1);
+  border:1px solid rgba(37,211,102,0.2);
+  display:flex;align-items:center;justify-content:center;
+  transition:all var(--t) var(--ease);
+}
+.btn-wa-sm:hover{background:#25D366;border-color:#25D366;transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,211,102,0.35)}
+
+/* Carousel controls */
+.c-controls{
+  display:flex;justify-content:center;gap:10px;
+  margin-top:12px;padding:0 clamp(16px,4vw,48px);
+}
+.c-btn{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--panel);
+  border:1px solid var(--line2);
+  color:var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  transition:all var(--t) var(--ease);
+}
+.c-btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold);transform:scale(1.07);box-shadow:0 4px 20px rgba(232,184,75,0.35)}
+
+/* ══════════════════════════════════════════════
+   TRUST STRIP
+══════════════════════════════════════════════ */
+.trust-strip{
+  padding:52px clamp(16px,4vw,48px);
+  background:var(--ink2);
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+}
+.trust-inner{
+  max-width:1280px;margin:0 auto;
+  display:flex;align-items:center;justify-content:center;
+  gap:clamp(24px,5vw,60px);flex-wrap:wrap;
+}
+.trust-item{display:flex;align-items:center;gap:14px}
+.trust-icon{
+  width:44px;height:44px;border-radius:12px;flex-shrink:0;
+  background:linear-gradient(135deg,rgba(232,184,75,0.12),rgba(200,148,44,0.06));
+  border:1px solid rgba(232,184,75,0.2);
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+}
+.trust-text strong{display:block;font-size:0.88rem;font-weight:600;color:var(--white);letter-spacing:-0.1px}
+.trust-text span{font-size:0.73rem;color:var(--text3);margin-top:1px;display:block}
+.trust-sep{width:1px;height:32px;background:var(--line2);flex-shrink:0}
+
+/* ══════════════════════════════════════════════
+   FEATURES
+══════════════════════════════════════════════ */
+.features-section{
+  padding:88px clamp(16px,4vw,48px);
+}
+.feat-grid{
+  max-width:1280px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;
+  margin-top:56px;
+}
+.feat-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--r2);
+  padding:30px 26px;
+  position:relative;overflow:hidden;
+  transition:all var(--t) var(--ease);
+}
+.feat-card::after{
+  content:'';position:absolute;top:0;left:20%;right:20%;height:1px;
+  background:linear-gradient(to right,transparent,var(--gold),transparent);
+  opacity:0;transition:opacity 0.3s;
+}
+.feat-card:hover{transform:translateY(-6px);border-color:rgba(232,184,75,0.22);box-shadow:0 16px 48px rgba(0,0,0,0.4)}
+.feat-card:hover::after{opacity:1}
+.feat-ico{
+  width:48px;height:48px;border-radius:var(--r);margin-bottom:18px;
+  background:linear-gradient(135deg,rgba(232,184,75,0.12),rgba(200,148,44,0.06));
+  border:1px solid rgba(232,184,75,0.18);
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;
+  transition:transform 0.3s;
+}
+.feat-card:hover .feat-ico{transform:scale(1.1) rotate(-4deg)}
+.feat-title{font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:9px;letter-spacing:-0.1px}
+.feat-desc{font-size:0.8rem;color:var(--text2);line-height:1.7}
+
+/* ══════════════════════════════════════════════
+   CART DRAWER
+══════════════════════════════════════════════ */
+.overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.65);
+  z-index:800;opacity:0;pointer-events:none;
+  transition:opacity 0.3s var(--ease);
+  backdrop-filter:blur(4px);
+}
+.overlay.on{opacity:1;pointer-events:all}
+
+.cart-panel{
+  position:fixed;top:0;right:-460px;width:min(440px,100vw);
+  height:100vh;z-index:801;
+  background:var(--ink2);
+  border-left:1px solid var(--line2);
+  box-shadow:-20px 0 80px rgba(0,0,0,0.5);
+  display:flex;flex-direction:column;
+  transition:right 0.38s var(--ease);
+}
+.cart-panel.on{right:0}
+
+.cpanel-head{
+  padding:22px 24px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  background:rgba(232,184,75,0.03);
+}
+.cpanel-head h2{font-family:'Fraunces',serif;font-weight:400;font-size:1.15rem;color:var(--white)}
+.cpanel-head h2 span{color:var(--gold)}
+.icon-btn{
+  width:34px;height:34px;border-radius:8px;
+  background:var(--ink3);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--text2);transition:all var(--t);
+}
+.icon-btn:hover{background:rgba(232,184,75,0.1);border-color:rgba(232,184,75,0.3);color:var(--gold)}
+
+.cpanel-body{flex:1;overflow-y:auto;padding:18px 24px;display:flex;flex-direction:column;gap:14px}
+.cart-empty{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  height:200px;gap:12px;color:var(--text3);font-size:0.85rem;text-align:center;
+}
+.cart-empty-ico{font-size:2.8rem;opacity:0.4}
+
+.cart-row{
+  display:flex;gap:14px;align-items:center;
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--r);padding:13px;
+}
+.cart-row img{
+  width:52px;height:52px;border-radius:9px;
+  background:var(--ink3);padding:5px;
+  object-fit:contain;flex-shrink:0;
+}
+.cart-row-info{flex:1;min-width:0}
+.cart-row-name{font-size:0.87rem;font-weight:600;color:var(--white);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cart-row-price{font-size:0.8rem;color:var(--gold);margin-top:3px;font-weight:500}
+.cart-row-rm{
+  width:28px;height:28px;border-radius:7px;flex-shrink:0;
+  background:transparent;border:none;color:var(--text3);
+  display:flex;align-items:center;justify-content:center;
+  transition:all var(--t);
+}
+.cart-row-rm:hover{background:rgba(248,113,113,0.12);color:var(--red)}
+
+.cpanel-foot{
+  padding:18px 24px;
+  border-top:1px solid var(--line);
+  background:rgba(232,184,75,0.02);
+}
+.cpanel-total{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:14px;
+}
+.cpanel-total-label{font-size:0.85rem;color:var(--text2)}
+.cpanel-total-val{font-family:'Fraunces',serif;font-weight:600;font-size:1.3rem;color:var(--gold);letter-spacing:-0.5px}
+
+.btn-place{
+  width:100%;padding:14px;
+  background:linear-gradient(135deg,var(--gold),#c8942c);
+  border-radius:var(--r);color:var(--ink);
+  font-size:0.92rem;font-weight:600;letter-spacing:0.1px;
+  transition:all var(--t) var(--ease);
+  box-shadow:0 4px 24px rgba(232,184,75,0.25);
+}
+.btn-place:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(232,184,75,0.4);opacity:0.95}
+.btn-place:active{transform:scale(0.99)}
+
+/* ══════════════════════════════════════════════
+   ORDER MODAL
+══════════════════════════════════════════════ */
+.modal-wrap{
+  position:fixed;inset:0;background:rgba(0,0,0,0.82);
+  z-index:900;opacity:0;pointer-events:none;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;transition:opacity 0.3s var(--ease);
+  backdrop-filter:blur(8px);
+}
+.modal-wrap.on{opacity:1;pointer-events:all}
+
+.modal-box{
+  background:var(--panel);
+  border:1px solid var(--line2);
+  border-radius:var(--r3);
+  width:100%;max-width:494px;max-height:92vh;overflow-y:auto;
+  padding:clamp(24px,5vw,38px) clamp(20px,5vw,36px);
+  box-shadow:0 40px 100px rgba(0,0,0,0.65),0 0 0 1px rgba(232,184,75,0.06);
+  transform:scale(0.93) translateY(18px);
+  transition:transform 0.35s var(--ease);
+}
+.modal-wrap.on .modal-box{transform:scale(1) translateY(0)}
+
+.modal-icon{
+  width:54px;height:54px;border-radius:14px;margin-bottom:18px;
+  background:linear-gradient(135deg,rgba(232,184,75,0.14),rgba(200,148,44,0.06));
+  border:1px solid rgba(232,184,75,0.22);
+  display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+}
+.modal-title{font-family:'Fraunces',serif;font-weight:400;font-size:1.45rem;color:var(--white);letter-spacing:-0.5px;margin-bottom:5px}
+.modal-sub{font-size:0.82rem;color:var(--text2);line-height:1.65;margin-bottom:26px}
+
+/* Summary box */
+.m-summary{
+  background:rgba(232,184,75,0.04);
+  border:1px solid rgba(232,184,75,0.14);
+  border-radius:var(--r);padding:16px;margin-bottom:24px;
+}
+.m-summary-lbl{font-size:0.65rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.m-s-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:6px 0;border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.m-s-row:last-of-type{border:none}
+.m-s-name{font-size:0.82rem;color:var(--text)}
+.m-s-price{font-size:0.82rem;color:var(--text2);font-weight:500}
+.m-s-divider{border:none;border-top:1px solid var(--line2);margin:10px 0}
+.m-s-total{display:flex;justify-content:space-between;align-items:center}
+.m-s-total span:first-child{font-size:0.88rem;font-weight:600;color:var(--text)}
+.m-s-total span:last-child{font-family:'Fraunces',serif;font-weight:600;font-size:1.1rem;color:var(--gold)}
+
+/* Form fields */
+.fgroup{margin-bottom:16px}
+.flabel{
+  display:flex;align-items:center;gap:6px;
+  font-size:0.7rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;
+  color:var(--text2);margin-bottom:7px;
+}
+.flabel .req{color:var(--gold)}
+.finput,.ftextarea{
+  width:100%;
+  background:var(--card);border:1px solid var(--line2);
+  border-radius:var(--r);padding:12px 14px;
+  color:var(--text);font-size:0.88rem;outline:none;
+  transition:all var(--t) var(--ease);
+  -webkit-appearance:none;
+}
+.finput::placeholder,.ftextarea::placeholder{color:var(--text3)}
+.finput:focus,.ftextarea:focus{
+  border-color:rgba(232,184,75,0.5);
+  box-shadow:0 0 0 3px rgba(232,184,75,0.08);
+  background:rgba(232,184,75,0.02);
+}
+.ftextarea{resize:vertical;min-height:84px}
+
+.m-actions{display:flex;gap:10px;margin-top:10px}
+.btn-outline{
+  flex:1;padding:13px;
+  background:transparent;border:1px solid var(--line2);
+  border-radius:var(--r);color:var(--text2);
+  font-size:0.88rem;font-weight:500;
+  transition:all var(--t) var(--ease);
+}
+.btn-outline:hover{border-color:rgba(255,255,255,0.25);color:var(--text)}
+.btn-send{
+  flex:2;padding:13px;
+  background:linear-gradient(135deg,var(--gold),#c8942c);
+  border-radius:var(--r);color:var(--ink);
+  font-size:0.92rem;font-weight:600;
+  transition:all var(--t) var(--ease);
+  box-shadow:0 4px 20px rgba(232,184,75,0.2);
+}
+.btn-send:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,184,75,0.35)}
+.btn-send:active{transform:scale(0.99)}
+.btn-send:disabled{opacity:0.55;cursor:not-allowed;transform:none}
+
+/* ══════════════════════════════════════════════
+   TOAST
+══════════════════════════════════════════════ */
+.toast{
+  position:fixed;bottom:26px;left:50%;
+  transform:translateX(-50%) translateY(16px);
+  z-index:1000;opacity:0;pointer-events:none;
+  transition:all 0.3s var(--ease);
+  display:flex;align-items:center;gap:10px;
+  padding:12px 22px;border-radius:99px;
+  font-size:0.85rem;font-weight:500;
+  white-space:nowrap;max-width:90vw;
+  background:var(--ink3);border:1px solid var(--line2);
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);color:var(--text);
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast.ok{background:rgba(52,211,153,0.12);border-color:rgba(52,211,153,0.3);color:var(--teal)}
+.toast.err{background:rgba(248,113,113,0.12);border-color:rgba(248,113,113,0.3);color:var(--red)}
+
+/* ══════════════════════════════════════════════
+   FLOATING WHATSAPP
+══════════════════════════════════════════════ */
+.wa-float{
+  position:fixed;bottom:28px;right:28px;z-index:700;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.45);
+  transition:all var(--t) var(--ease);
+  animation:waPop 3s ease infinite;
+}
+.wa-float:hover{transform:scale(1.1) translateY(-2px);box-shadow:0 8px 32px rgba(37,211,102,0.65);animation:none}
+@keyframes waPop{
+  0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.45)}
+  50%{box-shadow:0 4px 28px rgba(37,211,102,0.7),0 0 0 10px rgba(37,211,102,0.08)}
+}
+
+/* ══════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════ */
+.site-footer{
+  padding:52px clamp(16px,4vw,48px) 36px;
+  border-top:1px solid var(--line);
+  text-align:center;
+}
+.footer-brand{font-family:'Fraunces',serif;font-weight:400;font-size:1.25rem;color:var(--white);margin-bottom:6px}
+.footer-brand span{color:var(--gold)}
+.footer-tag{font-size:0.72rem;color:var(--text3);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:22px}
+.footer-links{display:flex;justify-content:center;gap:24px;margin-bottom:22px;flex-wrap:wrap}
+.footer-links a{font-size:0.8rem;color:var(--text2);transition:color var(--t)}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:0.72rem;color:var(--text3)}
+.footer-copy a{color:var(--gold);transition:opacity var(--t)}
+.footer-copy a:hover{opacity:0.75}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════ */
+@media(max-width:640px){
+  .hero-metrics{gap:20px;bottom:28px}
+  .metrics-sep{display:none}
+  .trust-sep{display:none}
+  .feat-grid{grid-template-columns:1fr}
+  .wa-float{bottom:18px;right:18px}
+  .hero-chip{font-size:0.62rem;padding:5px 14px}
+  .modal-box{border-radius:var(--r2)}
+}
+@media(max-width:400px){
+  .hero-h1{letter-spacing:-0.8px}
+  .btn-gold,.btn-ghost{padding:12px 20px;font-size:0.85rem}
+}
+</style>
+</head>
+<body>
+
+<!-- Background orbs -->
+<div class="bg-orb orb-a" aria-hidden="true"></div>
+<div class="bg-orb orb-b" aria-hidden="true"></div>
+
+<!-- ═══════════════ NAVBAR ═══════════════ -->
+<nav class="navbar" id="navbar">
+  <div class="nav-brand">
+    <div class="nav-brand-badge">🛠</div>
+    <div class="nav-brand-info">
+      <div class="nav-brand-name">A-S Tools <em>Updates</em></div>
+      <div class="nav-brand-tag">Premium AI Subscriptions</div>
+    </div>
+  </div>
+  <button class="cart-trigger" onclick="openCart()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>
+    </svg>
+    Cart
+    <span class="cart-num" id="cartNum">0</span>
+  </button>
+</nav>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<section class="hero" id="top">
+  <div class="hero-photo"></div>
+  <div class="hero-veil"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-chip">
+      <span class="hero-chip-dot"></span>
+      Premium AI Subscriptions
+    </div>
+    <h1 class="hero-h1">
+      <span class="hero-h1-top">Future of AI</span>
+      <span class="hero-h1-bot">Starts Here</span>
+    </h1>
+    <p class="hero-sub">
+      Trusted, affordable AI tool subscriptions — handpicked for creators, developers, and innovators ready to lead tomorrow.
+    </p>
+    <div class="hero-btns">
+      <button class="btn-gold" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+        Shop Now
+        <svg class="btn-gold-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+      <a class="btn-ghost" href="https://wa.me/+923290965135" target="_blank">
+        <svg width="15" height="15" viewBox="0 0 32 32" fill="currentColor"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.496.668 4.836 1.832 6.856L2 30l7.34-1.804A13.946 13.946 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.32 19.96c-.348.176-2.06 1.016-2.38 1.132-.32.116-.552.176-.784-.176-.232-.348-.9-1.132-1.104-1.364-.204-.232-.404-.26-.752-.088-.348.176-1.468.54-2.796 1.724-1.032.92-1.728 2.056-1.932 2.404-.204.348-.02.536.152.708.16.156.348.408.524.612.176.204.232.348.348.58.116.232.06.436-.028.612-.088.176-.784 1.892-1.076 2.592-.284.68-.572.588-.784.596-.204.008-.436.012-.668.012s-.612-.088-.932-.436c-.32-.348-1.22-1.192-1.22-2.908s1.248-3.372 1.424-3.604c.176-.232 2.456-3.748 5.948-5.256.832-.36 1.48-.576 1.984-.736.836-.268 1.596-.228 2.196-.14.672.1 2.06.844 2.352 1.66.292.816.292 1.516.204 1.66z"/></svg>
+        Chat with Us
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-metrics">
+    <div class="metric">
+      <div class="metric-n">5<small>+</small></div>
+      <div class="metric-l">AI Tools</div>
+    </div>
+    <div class="metrics-sep"></div>
+    <div class="metric">
+      <div class="metric-n">500<small>+</small></div>
+      <div class="metric-l">Customers</div>
+    </div>
+    <div class="metrics-sep"></div>
+    <div class="metric">
+      <div class="metric-n">24<small>/7</small></div>
+      <div class="metric-l">Support</div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════ PRODUCTS ═══════════════ -->
+<section class="products-band" id="products">
+  <div class="wrap">
+    <div class="products-head">
+      <div class="eyebrow"><div class="eyebrow-line"></div>Our Collection</div>
+      <h2 class="sec-title">Top AI Tools</h2>
+      <p class="sec-sub">Premium AI subscriptions at unbeatable prices — trusted by creators worldwide</p>
+    </div>
+  </div>
+  <div class="c-outer">
+    <div class="c-fade c-fade-l"></div>
+    <div class="c-fade c-fade-r"></div>
+    <div class="c-track" id="cTrack"></div>
+  </div>
+  <div class="c-controls">
+    <button class="c-btn" onclick="scrollC(-1)" aria-label="Previous">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <button class="c-btn" onclick="scrollC(1)" aria-label="Next">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════════ TRUST ═══════════════ -->
+<div class="trust-strip">
+  <div class="trust-inner">
+    <div class="trust-item">
+      <div class="trust-icon">🔐</div>
+      <div class="trust-text">
+        <strong>100% Verified</strong>
+        <span>Authentic licenses</span>
+      </div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="trust-icon">⚡</div>
+      <div class="trust-text">
+        <strong>Fast Delivery</strong>
+        <span>After confirmation</span>
+      </div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="trust-icon">💬</div>
+      <div class="trust-text">
+        <strong>24/7 Support</strong>
+        <span>WhatsApp & Email</span>
+      </div>
+    </div>
+    <div class="trust-sep"></div>
+    <div class="trust-item">
+      <div class="trust-icon">⭐</div>
+      <div class="trust-text">
+        <strong>Top Rated</strong>
+        <span>500+ happy clients</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ FEATURES ═══════════════ -->
+<section class="features-section">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="text-align:center">
+      <div class="eyebrow" style="justify-content:center"><div class="eyebrow-line"></div>Why Choose Us</div>
+      <h2 class="sec-title">Built for the AI Era</h2>
+      <p class="sec-sub" style="max-width:460px;margin:0 auto">Everything you need to access the world's most powerful AI tools — fast, safe, and affordable.</p>
+    </div>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-ico">⚡</div>
+        <div class="feat-title">Instant Activation</div>
+        <div class="feat-desc">Your AI tool access is activated within minutes of order confirmation — zero waiting.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">🛡️</div>
+        <div class="feat-title">Verified & Authentic</div>
+        <div class="feat-desc">Every subscription is sourced directly from official providers with full verification.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">💰</div>
+        <div class="feat-title">Best Prices</div>
+        <div class="feat-desc">We guarantee the most competitive prices — premium tools at truly accessible costs.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-ico">🤝</div>
+        <div class="feat-title">Dedicated Support</div>
+        <div class="feat-desc">Our team is available 24/7 on WhatsApp to answer questions and resolve issues instantly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer class="site-footer">
+  <div class="footer-brand">A-S Tools <span>Updates</span></div>
+  <div class="footer-tag">Fresh Finds, Best Prices</div>
+  <div class="footer-links">
+    <a href="#top">Home</a>
+    <a href="#products">Products</a>
+    <a href="mailto:justgrok10@gmail.com">Email Us</a>
+    <a href="https://wa.me/+923290965135" target="_blank">WhatsApp</a>
+  </div>
+  <div class="footer-copy">© 2025 A-S Tools Updates · All rights reserved · <a href="mailto:justgrok10@gmail.com">justgrok10@gmail.com</a></div>
+</footer>
+
+<!-- ═══════════════ CART DRAWER ═══════════════ -->
+<div class="overlay" id="cOverlay" onclick="closeCart()"></div>
+<div class="cart-panel" id="cartPanel">
+  <div class="cpanel-head">
+    <h2>Your <span>Cart</span></h2>
+    <button class="icon-btn" onclick="closeCart()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="cpanel-body" id="cartBody">
+    <div class="cart-empty">
+      <div class="cart-empty-ico">🛒</div>
+      <div>Your cart is empty.<br>Add some AI tools to get started!</div>
+    </div>
+  </div>
+  <div class="cpanel-foot">
+    <div class="cpanel-total">
+      <span class="cpanel-total-label">Total</span>
+      <span class="cpanel-total-val" id="cartTotal">PKR 0</span>
+    </div>
+    <button class="btn-place" onclick="openModal()">Place Order →</button>
+  </div>
+</div>
+
+<!-- ═══════════════ ORDER MODAL ═══════════════ -->
+<div class="modal-wrap" id="modalWrap">
+  <div class="modal-box">
+    <div class="modal-icon">📦</div>
+    <div class="modal-title">Complete Your Order</div>
+    <p class="modal-sub">Fill in your details below and we'll process your order within minutes.</p>
+
+    <div class="m-summary">
+      <div class="m-summary-lbl">Order Summary</div>
+      <div id="mSummaryItems"></div>
+      <hr class="m-s-divider"/>
+      <div class="m-s-total">
+        <span>Total</span>
+        <span id="mTotal">PKR 0</span>
+      </div>
+    </div>
+
+    <div class="fgroup">
+      <label class="flabel">Full Name <span class="req">*</span></label>
+      <input type="text" id="fName" class="finput" placeholder="Enter your full name"/>
+    </div>
+    <div class="fgroup">
+      <label class="flabel">Phone Number <span class="req">*</span></label>
+      <input type="tel" id="fPhone" class="finput" placeholder="+92 329 0965135"/>
+    </div>
+    <div class="fgroup">
+      <label class="flabel">Email <span style="color:var(--text3);font-size:0.65rem;font-weight:400;text-transform:none;letter-spacing:0">(optional)</span></label>
+      <input type="email" id="fEmail" class="finput" placeholder="you@example.com"/>
+    </div>
+    <div class="fgroup">
+      <label class="flabel">Notes</label>
+      <textarea id="fNotes" class="ftextarea" placeholder="Any special instructions..."></textarea>
+    </div>
+
+    <div class="m-actions">
+      <button class="btn-outline" onclick="closeModal()">Cancel</button>
+      <button class="btn-send" id="sendBtn" onclick="submitOrder()">Send Order 🚀</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ TOAST ═══════════════ -->
+<div class="toast" id="toast"></div>
+
+<!-- ═══════════════ WA FLOAT ═══════════════ -->
+<a class="wa-float" href="https://wa.me/+923290965135" target="_blank" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 32 32" fill="white">
+    <path d="M16 2C8.268 2 2 8.268 2 16c0 2.496.668 4.836 1.832 6.856L2 30l7.34-1.804A13.946 13.946 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm0 25.6a11.55 11.55 0 01-5.884-1.604l-.42-.248-4.352 1.072 1.108-4.228-.276-.44A11.54 11.54 0 014.4 16C4.4 9.592 9.592 4.4 16 4.4S27.6 9.592 27.6 16 22.408 27.6 16 27.6zm6.32-8.64c-.348-.176-2.06-1.016-2.38-1.132-.32-.116-.552-.176-.784.176-.232.348-.9 1.132-1.104 1.364-.204.232-.404.26-.752.088-.348-.176-1.468-.54-2.796-1.724-1.032-.92-1.728-2.056-1.932-2.404-.204-.348-.02-.536.152-.708.16-.156.348-.408.524-.612.176-.204.232-.348.348-.58.116-.232.06-.436-.028-.612-.088-.176-.784-1.892-1.076-2.592-.284-.68-.572-.588-.784-.596-.204-.008-.436-.012-.668-.012s-.612.088-.932.436c-.32.348-1.22 1.192-1.22 2.908s1.248 3.372 1.424 3.604c.176.232 2.456 3.748 5.948 5.256.832.36 1.48.576 1.984.736.836.268 1.596.228 2.196.14.672-.1 2.06-.844 2.352-1.66.292-.816.292-1.516.204-1.66-.088-.144-.32-.232-.668-.408z"/>
+  </svg>
+</a>
+
+<!-- ═══════════════ SCRIPT ═══════════════ -->
+<script>
+// Products
+const products = [
+  {id:1,name:"HeyGen AI",    desc:"AI video generation — create studio-quality videos with realistic avatars.",          price:4500, img:"https://i.ibb.co/kgrGTkMb/heygen-ai-logo-rounded-hd-free-png.webp"},
+  {id:2,name:"VEO 3",        desc:"Google's cutting-edge AI video model for next-level cinematic content creation.",      price:6800, img:"https://i.ibb.co/zWgBVZNY/VEO-3-logo.webp"},
+  {id:3,name:"AI Suite Pro", desc:"All-in-one AI productivity suite with powerful tools and seamless integrations.",      price:3200, img:"https://i.ibb.co/3YjSpsjr/f-Ot-GXr-A5iunaym-KRbut-Hla-ARo-Xwi7dn-MNz-Rn-Lan6-2.jpg"},
+  {id:4,name:"Grok AI",      desc:"xAI's Grok — real-time web access combined with advanced reasoning capabilities.",     price:2000, img:"https://i.ibb.co/nMfXdVCs/2025-grok-logo-750.png"},
+  {id:5,name:"CapCut Pro",   desc:"Premium AI-powered video editing for creators, marketers, and content professionals.", price:600,  img:"https://i.ibb.co/5DQXnxH/00e02-Ss3-Ki-OLKE7-Ivb8-SQ0-P-1.webp"},
+];
+
+let cart = [];
+
+// ── Build cards ──
+function buildCards() {
+  const t = document.getElementById('cTrack');
+  t.innerHTML = products.map(p => `
+    <div class="p-card">
+      <div class="p-img"><img src="${p.img}" alt="${p.name}" loading="lazy"/></div>
+      <div class="p-body">
+        <div class="p-name">${p.name}</div>
+        <div class="p-desc">${p.desc}</div>
+        <div class="p-row">
+          <div class="p-price">PKR ${p.price.toLocaleString()}</div>
+          <div class="p-tag">Available</div>
+        </div>
+        <div class="p-actions">
+          <a class="btn-wa-sm" href="https://wa.me/+923290965135?text=${encodeURIComponent('Hi! I am interested in '+p.name)}" target="_blank" title="Ask on WhatsApp">
+            <svg width="17" height="17" viewBox="0 0 32 32" fill="#25D366"><path d="M16 2C8.268 2 2 8.268 2 16c0 2.496.668 4.836 1.832 6.856L2 30l7.34-1.804A13.946 13.946 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm6.32 19.96c-.348.176-2.06 1.016-2.38 1.132-.32.116-.552.176-.784-.176-.232-.348-.9-1.132-1.104-1.364-.204-.232-.404-.26-.752-.088-.348.176-1.468.54-2.796 1.724-1.032.92-1.728 2.056-1.932 2.404-.204.348-.02.536.152.708.16.156.348.408.524.612.176.204.232.348.348.58.116.232.06.436-.028.612-.088.176-.784 1.892-1.076 2.592-.284.68-.572.588-.784.596-.204.008-.436.012-.668.012s-.612-.088-.932-.436c-.32-.348-1.22-1.192-1.22-2.908s1.248-3.372 1.424-3.604c.176-.232 2.456-3.748 5.948-5.256.832-.36 1.48-.576 1.984-.736.836-.268 1.596-.228 2.196-.14.672.1 2.06.844 2.352 1.66.292.816.292 1.516.204 1.66z"/></svg>
+          </a>
+          <button class="btn-cart" id="btn${p.id}" onclick="addCart(${p.id})">
+            <span>+ Add to Cart</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function scrollC(d) {
+  document.getElementById('cTrack').scrollBy({left: d * 290, behavior:'smooth'});
+}
+
+// ── Cart ──
+function addCart(id) {
+  const p = products.find(x => x.id === id);
+  const ex = cart.find(x => x.id === id);
+  ex ? ex.qty++ : cart.push({...p, qty:1});
+  updateCart();
+  const btn = document.getElementById('btn'+id);
+  btn.classList.add('done');
+  btn.querySelector('span').textContent = '✓ Added';
+  setTimeout(() => { btn.classList.remove('done'); btn.querySelector('span').textContent = '+ Add to Cart'; }, 1800);
+  toast('✓ '+p.name+' added!', 'ok');
+}
+
+function removeCart(id) {
+  cart = cart.filter(x => x.id !== id);
+  updateCart();
+}
+
+function updateCart() {
+  const count = cart.reduce((s,c) => s+c.qty, 0);
+  const total = cart.reduce((s,c) => s+c.price*c.qty, 0);
+  document.getElementById('cartNum').textContent = count;
+  document.getElementById('cartTotal').textContent = 'PKR ' + total.toLocaleString();
+
+  const body = document.getElementById('cartBody');
+  if (!cart.length) {
+    body.innerHTML = `<div class="cart-empty"><div class="cart-empty-ico">🛒</div><div>Your cart is empty.<br>Add some AI tools to get started!</div></div>`;
+    return;
+  }
+  body.innerHTML = cart.map(c => `
+    <div class="cart-row">
+      <img src="${c.img}" alt="${c.name}"/>
+      <div class="cart-row-info">
+        <div class="cart-row-name">${c.name}${c.qty>1 ? ' ×'+c.qty : ''}</div>
+        <div class="cart-row-price">PKR ${(c.price*c.qty).toLocaleString()}</div>
+      </div>
+      <button class="cart-row-rm" onclick="removeCart(${c.id})" title="Remove">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  `).join('');
+}
+
+function openCart()  { document.getElementById('cOverlay').classList.add('on'); document.getElementById('cartPanel').classList.add('on'); document.body.style.overflow='hidden'; }
+function closeCart() { document.getElementById('cOverlay').classList.remove('on'); document.getElementById('cartPanel').classList.remove('on'); document.body.style.overflow=''; }
+
+// ── Order Modal ──
+function openModal() {
+  if (!cart.length) { toast('⚠️ Cart is empty!', ''); return; }
+  closeCart();
+  const total = cart.reduce((s,c) => s+c.price*c.qty, 0);
+  document.getElementById('mSummaryItems').innerHTML = cart.map(c => `
+    <div class="m-s-row">
+      <span class="m-s-name">${c.name}${c.qty>1 ? ' ×'+c.qty : ''}</span>
+      <span class="m-s-price">PKR ${(c.price*c.qty).toLocaleString()}</span>
+    </div>
+  `).join('');
+  document.getElementById('mTotal').textContent = 'PKR ' + total.toLocaleString();
+  document.getElementById('modalWrap').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeModal() { document.getElementById('modalWrap').classList.remove('on'); document.body.style.overflow=''; }
+
+// ── EmailJS ──
+emailjs.init('swYrDSsdBguJyTw5j');
+
+async function submitOrder() {
+  const name  = document.getElementById('fName').value.trim();
+  const phone = document.getElementById('fPhone').value.trim();
+  const email = document.getElementById('fEmail').value.trim();
+  const notes = document.getElementById('fNotes').value.trim();
+  if (!name)  { toast('⚠️ Please enter your name.', ''); return; }
+  if (!phone) { toast('⚠️ Please enter your phone.', ''); return; }
+
+  const total = cart.reduce((s,c) => s+c.price*c.qty, 0);
+  const items = cart.map(c => `• ${c.name}${c.qty>1?' (x'+c.qty+')':''}: PKR ${(c.price*c.qty).toLocaleString()}`).join('\n');
+
+  const btn = document.getElementById('sendBtn');
+  btn.textContent = 'Sending…'; btn.disabled = true;
+
+  try {
+    await emailjs.send('service_0dmxi34', 'template_ki5ae2b', {
+      customer_name:  name,
+      customer_phone: phone,
+      customer_email: email || 'Not provided',
+      items:          items,
+      total:          'PKR ' + total.toLocaleString(),
+      notes:          notes || 'None'
+    });
+    toast('✅ Order sent successfully!', 'ok');
+    closeModal();
+
+    const waMsg = encodeURIComponent(
+      `*New Order – A-S Tools Updates*\n\n` +
+      `👤 Name: ${name}\n📞 Phone: ${phone}\n\n` +
+      `🛒 *Items:*\n${items}\n\n` +
+      `💰 *Total: PKR ${total.toLocaleString()}*` +
+      (notes ? `\n\n📝 Notes: ${notes}` : '')
+    );
+    setTimeout(() => {
+      if (confirm('Order email sent! ✅\nWould you also like to send via WhatsApp?')) {
+        window.open('https://wa.me/+923290965135?text='+waMsg, '_blank');
+      }
+    }, 500);
+
+    cart = [];
+    ['fName','fPhone','fEmail','fNotes'].forEach(id => document.getElementById(id).value='');
+    updateCart();
+  } catch(e) {
+    console.error(e);
+    toast('❌ Failed to send. Please try again.', 'err');
+  } finally {
+    btn.textContent = 'Send Order 🚀'; btn.disabled = false;
+  }
+}
+
+// ── Toast ──
+function toast(msg, type) {
+  const el = document.getElementById('toast');
+  el.textContent = msg; el.className = 'toast ' + type + ' show';
+  setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+// ── Navbar scroll ──
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+}, {passive:true});
+
+// Init
+buildCards();
+updateCart();
+</script>
+</body>
+</html>
